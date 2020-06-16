@@ -18,38 +18,38 @@ namespace Laboratory1
         {
             InitializeComponent();
         }
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog OpenD = new OpenFileDialog();
-            if (OpenD.ShowDialog() == DialogResult.OK)
+            OpenFileDialog OpenDlg = new OpenFileDialog();
+            if (OpenDlg.ShowDialog() == DialogResult.OK)
             {
-                StreamReader Reader = new StreamReader(OpenD.FileName, Encoding.Default);
+                StreamReader Reader = new StreamReader(OpenDlg.FileName, Encoding.Default);
                 richTextBox1.Text = Reader.ReadToEnd();
                 Reader.Close();
             }
-            OpenD.Dispose();
+            OpenDlg.Dispose();
 
         }
 
 
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog SaveD = new SaveFileDialog();
-            if (SaveD.ShowDialog() == DialogResult.OK)
+            SaveFileDialog SaveDlg = new SaveFileDialog();
+            if (SaveDlg.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter Writer = new StreamWriter(SaveD.FileName);
+                StreamWriter Writer = new StreamWriter(SaveDlg.FileName);
                 for (int i = 0; i < listBox2.Items.Count; i++)
                 {
                     Writer.WriteLine((string)listBox2.Items[i]);
                 }
                 Writer.Close();
             }
-            SaveD.Dispose();
+            SaveDlg.Dispose();
 
         }
 
@@ -60,14 +60,14 @@ namespace Laboratory1
 
         private void richTextBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog OpenD = new OpenFileDialog();
-            if (OpenD.ShowDialog() == DialogResult.OK)
+            OpenFileDialog OpenDlg = new OpenFileDialog();
+            if (OpenDlg.ShowDialog() == DialogResult.OK)
             {
-                StreamReader Reader = new StreamReader(OpenD.FileName, Encoding.Default);
+                StreamReader Reader = new StreamReader(OpenDlg.FileName, Encoding.Default);
                 richTextBox1.Text = Reader.ReadToEnd();
                 Reader.Close();
             }
-            OpenD.Dispose();
+            OpenDlg.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
